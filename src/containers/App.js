@@ -1,6 +1,6 @@
 import CardList from "../components/CardList";
 import ErrorBoundary from "../components/ErrorBoundary";
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import Scroll from "../components/Scroll";
 import SearchBox from "../components/SearchBox";
 import "./App.css";
