@@ -20,6 +20,8 @@ function App() {
   //     .then((users) => this.setState({ robots: users }));
   // }
 
+  const [robots, setRobots] = useState([]);
+
   const onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
   };
