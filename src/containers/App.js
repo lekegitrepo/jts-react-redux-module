@@ -33,8 +33,6 @@ function App() {
     setSearchfield(event.target.value);
   };
 
-  console.log("This is robots: ", robots, robots.robots);
-
   const filteredRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(searchfield.toLowerCase());
   });
