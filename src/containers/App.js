@@ -3,6 +3,8 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import React, { useState, useEffect } from "react";
 import Scroll from "../components/Scroll";
 import SearchBox from "../components/SearchBox";
+import { connect } from "react-redux";
+import { setSearchField } from "../actions";
 import "./App.css";
 
 function App() {
@@ -40,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
