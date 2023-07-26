@@ -7,6 +7,18 @@ import { connect } from "react-redux";
 import { setSearchField } from "../actions";
 import "./App.css";
 
+const mapStateToProps = (state) => {
+  return {
+    searchfield: state.searchRobots.searchField,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  };
+};
+
 function App() {
   const [robots, setRobots] = useState([]);
   const [searchfield, setSearchfield] = useState("");
@@ -42,4 +54,4 @@ function App() {
   );
 }
 
-export default connect()(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
