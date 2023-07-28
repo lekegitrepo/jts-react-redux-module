@@ -9,7 +9,7 @@ import "./App.css";
 
 const mapStateToProps = (state) => {
   return {
-    searchfield: state.searchRobots.searchField,
+    searchfield: state.searchField,
   };
 };
 
@@ -19,10 +19,12 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-function App() {
+function App(props) {
   const [robots, setRobots] = useState([]);
-  const [searchfield, setSearchfield] = useState("");
+  // const [searchfield, setSearchfield] = useState("");
   const [count, setCount] = useState(0);
+  // const [{ searchfield }] = useReducer(mapStateToProps, mapDispatchToProps)([]);
+  const { searchField, onSearchChange } = props;
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -31,12 +33,12 @@ function App() {
     console.log(count);
   }, [count]); // only run if count changes.
 
-  const onSearchChange = (event) => {
-    setSearchfield(event.target.value);
-  };
+  // const onSearchChange = (event) => {
+  //   setSearchfield(event.target.value);
+  // };
 
   const filteredRobots = robots.filter((robot) => {
-    return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+    return robot.name.toLowerCase().includes(searchField.toLowerCase());
   });
   return !robots.length ? (
     <h1>Loading...</h1>
