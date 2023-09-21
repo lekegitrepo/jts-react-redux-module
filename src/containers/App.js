@@ -64,6 +64,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends Component {
   componentDidMount() {
+    console.log("This is componentDidMount");
     this.props.onRequestRobots();
   }
 
